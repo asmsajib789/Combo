@@ -1,94 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Asia Betting Platform</title>
+  <title>Club Earn BD | Combo Landing Page</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Asia Betting Platform</h1>
-    <p>Get Bonus with Promo Code</p>
-    <button class="promo-btn" onclick="copyPromoCode()" onmouseout="resetTooltip()" id="promoBtn">
-      Oxy11 <span class="copy-icon">📋</span>
-    </button>
-    <a href="https://1xbet6767.netlify.app/" class="btn">Join 1xBet Now</a>
-  </section>
-
-  <!-- Combo Section -->
-  <section class="brands">
-    <div class="brand-card">
-      <h2>1xBet</h2>
-      <a href="https://1xbet6767.netlify.app/" target="_blank">Visit</a>
+  <header>
+    <div class="container">
+      <h1>Club Earn BD</h1>
+      <p class="tagline">আপনার অফিশিয়াল 1xBet, Linebet & Melbet অ্যাফিলিয়েট</p>
     </div>
-    <div class="brand-card">
-      <h2>Linebet</h2>
-      <a href="https://linebet-login.netlify.app/" target="_blank">Visit</a>
-    </div>
-    <div class="brand-card">
-      <h2>Melbet</h2>
-      <a href="https://melbet6767.netlify.app/" target="_blank">Visit</a>
-    </div>
-  </section>
+  </header>
 
-  <!-- Free Spin Section -->
-  <section class="free-spin">
-    <h2>🎁 Get Free Spin Bonus!</h2>
-    <p>Claim your free spin now using promo code</p>
-    <button class="promo-btn" onclick="copyPromoCode()" onmouseout="resetTooltip()" id="promoBtn2">
-      Oxy11 <span class="copy-icon">📋</span>
-    </button>
-    <a href="https://linebet-login.netlify.app/" class="btn">Try Your Luck</a>
-  </section>
+  <main class="container">
+    <section class="join-buttons">
+      <a href="https://1xbet6767.netlify.app/" target="_blank" class="btn btn-1xbet">Join 1xBet Now</a>
+      <a href="https://linebet-login.netlify.app/" target="_blank" class="btn btn-primary">Join Linebet Now</a>
+      <a href="https://melbet6767.netlify.app/" target="_blank" class="btn btn-primary">Join Melbet Now</a>
+    </section>
 
-  <!-- Facebook Group Section -->
-  <section class="facebook-group">
-    <h2>Join Our Facebook Group</h2>
-    <a href="https://facebook.com/groups/358140671845666/" class="btn" target="_blank">Join Now</a>
-  </section>
+    
+    <section class="free-spin">
+      <h2>🎰 ফ্রি স্পিনে অংশ নিন!</h2>
+      <a href="https://1xbet6767.netlify.app/" target="_blank" class="btn btn-spin">Spin Now</a>
+    </section>
 
-  <!-- Contact Section -->
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Telegram / WhatsApp / IMO: <strong>+8801826444505</strong></p>
+    <section class="social-links">
+      <a href="https://facebook.com/groups/358140671845666/" target="_blank" class="btn btn-facebook">Facebook Group</a>
+      <a href="#" target="_blank" id="telegram-link" class="btn btn-telegram">Telegram Group</a>
+    </section>
+  </main>
+  <section class="promo-code">
+      <p>🎁 প্রমো কোড: <strong>Oxy11</strong></p>
+      <p>📞 যোগাযোগ: +8801826444505 (Telegram / WhatsApp / IMO)</p>
   </section>
+  
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Club Earn BD. All rights reserved.</p>
+    <div class="container">
+      <p>© 2025 Club Earn BD | All Rights Reserved</p>
+    </div>
   </footer>
 
   <script>
-    function copyPromoCode() {
-      navigator.clipboard.writeText('Oxy11').then(() => {
-        alert('Promo code Oxy11 copied to clipboard!');
-      }, () => {
-        alert('Failed to copy. Please copy manually.');
-      });
-    }
-
-    // For better UX with tooltip on both buttons
-    const btn1 = document.getElementById('promoBtn');
-    const btn2 = document.getElementById('promoBtn2');
-
-    function copyPromoCode() {
-      navigator.clipboard.writeText('Oxy11').then(() => {
-        [btn1, btn2].forEach(btn => {
-          btn.classList.add('copied');
-        });
-      }, () => {
-        alert('Failed to copy. Please copy manually.');
-      });
-    }
-    function resetTooltip() {
-      [btn1, btn2].forEach(btn => {
-        btn.classList.remove('copied');
-      });
-    }
+    // Telegram গ্রুপ লিঙ্ক এখানে বসাবেন
+    document.getElementById('telegram-link').href = "https://t.me/YourTelegramGroupLink";
   </script>
-
 </body>
 </html>
