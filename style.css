@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+.hero {
+  background: #ffc107;
+  color: #111;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  margin: 0 0 10px 0;
+}
+
+.hero .btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 12px 24px;
+  background: #111;
+  color: #ffc107;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.brands {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  background: #222;
+}
+
+.brand-card {
+  background: #333;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  text-align: center;
+  width: 250px;
+}
+
+.brand-card h2 {
+  margin-bottom: 10px;
+}
+
+.brand-card a {
+  color: #ffc107;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.free-spin, .facebook-group, .contact {
+  padding: 40px 20px;
+  text-align: center;
+  background: #1c1c1c;
+}
+
+.free-spin h2, .facebook-group h2, .contact h2 {
+  margin-bottom: 15px;
+}
+
+.free-spin .btn, .facebook-group .btn {
+  background: #ffc107;
+  color: #111;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin-top: 15px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.promo-btn {
+  background: linear-gradient(90deg, #ffb700, #ffdc00);
+  color: #111;
+  border: none;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(255, 220, 0, 0.7);
+  transition: background 0.3s ease;
+  user-select: none;
+  position: relative;
+}
+
+.promo-btn:hover {
+  background: linear-gradient(90deg, #ffdc00, #ffb700);
+  box-shadow: 0 6px 20px rgba(255, 220, 0, 0.9);
+}
+
+.copy-icon {
+  font-size: 1.2rem;
+}
+
+.promo-btn.copied::after {
+  content: "Copied!";
+  position: absolute;
+  top: -30px;
+  right: 10px;
+  background: #222;
+  color: #ffc107;
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 1;
+  pointer-events: none;
+  animation: fadeout 2s forwards;
+}
+
+@keyframes fadeout {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
