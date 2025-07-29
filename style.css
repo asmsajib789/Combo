@@ -1,134 +1,161 @@
-body {
+/* Reset */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #111;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0a1f44;
+  color: #eee;
+  text-align: center;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container */
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* Header */
+header {
+  background: #061632;
+  padding: 30px 0 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+header .tagline {
+  font-size: 1.1rem;
+  color: #9bb8d7;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  margin: 10px 5px;
+  min-width: 180px;
+}
+
+/* 1xBet Button */
+.btn-1xbet {
+  background: linear-gradient(45deg, #ff0000, #cc0000);
+  color: white;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 12px rgba(255, 0, 0, 0.6);
+}
+.btn-1xbet:hover {
+  background: linear-gradient(45deg, #cc0000, #990000);
+  box-shadow: 0 8px 20px rgba(204, 0, 0, 0.8);
+  border-color: #ff4444;
   color: #fff;
 }
 
-.hero {
-  background: #ffc107;
-  color: #111;
-  text-align: center;
-  padding: 50px 20px;
+/* Primary Buttons (Linebet, Melbet) */
+.btn-primary {
+  background: linear-gradient(135deg, #0066ff, #0044cc);
+  color: #fff;
+  border: 2px solid transparent;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0044cc, #002a99);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+  border-color: #0080ff;
 }
 
-.hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  margin: 0 0 10px 0;
-}
-
-.hero .btn {
-  margin-top: 20px;
-  display: inline-block;
-  padding: 12px 24px;
-  background: #111;
-  color: #ffc107;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.brands {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 40px 20px;
-  background: #222;
-}
-
-.brand-card {
-  background: #333;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 8px;
-  text-align: center;
-  width: 250px;
-}
-
-.brand-card h2 {
-  margin-bottom: 10px;
-}
-
-.brand-card a {
-  color: #ffc107;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.free-spin, .facebook-group, .contact {
-  padding: 40px 20px;
-  text-align: center;
-  background: #1c1c1c;
-}
-
-.free-spin h2, .facebook-group h2, .contact h2 {
-  margin-bottom: 15px;
-}
-
-.free-spin .btn, .facebook-group .btn {
-  background: #ffc107;
-  color: #111;
-  padding: 10px 20px;
-  text-decoration: none;
-  margin-top: 15px;
-  display: inline-block;
-  border-radius: 5px;
-}
-
-.promo-btn {
-  background: linear-gradient(90deg, #ffb700, #ffdc00);
-  color: #111;
-  border: none;
-  padding: 14px 28px;
+/* Promo Section */
+.promo-code {
+  background: #0e2a5f;
+  padding: 20px 10px;
+  border-radius: 14px;
+  font-size: 1.25rem;
   font-weight: 700;
-  font-size: 1.3rem;
-  border-radius: 8px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 15px rgba(255, 220, 0, 0.7);
-  transition: background 0.3s ease;
-  user-select: none;
-  position: relative;
+  margin-bottom: 30px;
+  box-shadow: 0 0 8px #0044cc;
 }
 
-.promo-btn:hover {
-  background: linear-gradient(90deg, #ffdc00, #ffb700);
-  box-shadow: 0 6px 20px rgba(255, 220, 0, 0.9);
+/* Free Spin */
+.free-spin {
+  margin-bottom: 40px;
 }
 
-.copy-icon {
-  font-size: 1.2rem;
+.btn-spin {
+  background: #ff9800;
+  color: #000;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(255, 152, 0, 0.6);
+  transition: background-color 0.3s ease;
+}
+.btn-spin:hover {
+  background: #cc7a00;
+  color: #fff;
 }
 
-.promo-btn.copied::after {
-  content: "Copied!";
-  position: absolute;
-  top: -30px;
-  right: 10px;
-  background: #222;
-  color: #ffc107;
-  font-size: 0.9rem;
-  padding: 4px 8px;
-  border-radius: 4px;
-  opacity: 1;
-  pointer-events: none;
-  animation: fadeout 2s forwards;
+/* Social Group Buttons */
+.social-links {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-@keyframes fadeout {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+.btn-facebook {
+  background: #3b5998;
+  color: #fff;
+  border: 2px solid transparent;
+}
+.btn-facebook:hover {
+  background: #2d4373;
+  border-color: #375a9f;
 }
 
+.btn-telegram {
+  background: #0088cc;
+  color: #fff;
+  border: 2px solid transparent;
+}
+.btn-telegram:hover {
+  background: #006699;
+  border-color: #005580;
+}
+
+/* Footer */
 footer {
-  background: #000;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  color: #aaa;
+  background: #061632;
+  padding: 20px 0;
+  margin-top: auto;
+  font-size: 0.9rem;
+  color: #7a8eb7;
+  user-select: none;
 }
+
+/* Responsive */
+@media (min-width: 480px) {
+  .join-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  }
