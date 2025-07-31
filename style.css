@@ -167,3 +167,58 @@ footer {
   background-color: #1d8ac4;
   box-shadow: 0 6px 16px rgba(34, 158, 217, 0.5);
 }
+/* Agent Section */
+.agent-section {
+  background-color: #0a183d;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 20px;
+  margin: 40px 0;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+}
+
+.agent-section h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #00ffcc;
+}
+
+.agent-section p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #ccc;
+}
+
+.agent-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 25px;
+  max-width: 400px;
+}
+
+.agent-features ul li {
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-radius: 12px;
+  font-size: 15px;
+  text-align: left;
+  color: #fff;
+}
+
+.btn-agent {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #00c2ff;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-agent:hover {
+  background-color: #0099cc;
+  transform: scale(1.05);
+}
