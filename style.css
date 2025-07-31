@@ -138,3 +138,32 @@ footer {
     opacity: 1;
   }
 }
+.telegram-join {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.telegram-join a {
+  display: inline-flex;
+  align-items: center;
+  background-color: #229ED9;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(34, 158, 217, 0.4);
+}
+
+.telegram-join a img {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+.telegram-join a:hover {
+  background-color: #1d8ac4;
+  box-shadow: 0 6px 16px rgba(34, 158, 217, 0.5);
+}
