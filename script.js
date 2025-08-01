@@ -1,12 +1,16 @@
-// Stat numbers change randomly each 10 seconds
-function randomUpdate(id, base, range) {
-  const el = document.getElementById(id);
-  const newVal = base + Math.floor(Math.random() * range);
-  el.textContent = newVal + "+";
+// Function to get a random daily joined number (2-6) and save for the day
+function getTodayJoinCount() {
+  const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  const saved = JSON.parse(localStorage.getItem('todayJoinData'));
+
+  if (saved && saved.date === today) {
+    return saved.count;
+  } else {
+    const randomCount = Math.floor(Math.random() * 5) + 2; // 2 to 6
+    localStorage.setItem('todayJoinData', JSON.stringify({ date: today, count: randomCount }));
+    return randomCount;
+  }
 }
 
-setInterval(() => {
-  randomUpdate("stat1-number", 1500, 50); // ইউজার
-  randomUpdate("stat2-number", 3200, 100); // ডিপোজিট
-  randomUpdate("stat3-number", 1000, 30); // ফ্রি বোনাস
-}, 10000); // প্রতি ১০ সেকেন্ডে চেঞ্জ
+// Set the today's join count
+document.getElementById('todayJoined').innerText = getTodayJoinCount();
