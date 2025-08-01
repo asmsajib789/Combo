@@ -167,35 +167,34 @@ footer {
   background-color: #1d8ac4;
   box-shadow: 0 6px 16px rgba(34, 158, 217, 0.5);
 }
-
 .stats-container {
   display: flex;
   justify-content: center;
-  gap: 15px;       /* একটু কম গ্যাপ */
-  flex-wrap: nowrap; /* ১ লাইনে থাকবে */
-  max-width: 600px;  /* চাইলে ব্রাউজার সাইজে কন্ট্রোল */
-  margin: 0 auto;    /* সেন্টারে আনতে */
+  gap: 15px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .stat-box {
   background: #111842;
-  padding: 15px 20px;   /* ছোট প্যাডিং */
+  padding: 15px 20px;
   border-radius: 10px;
   box-shadow: 0 0 8px #1f2b61;
-  min-width: 160px;     /* ছোট করে */
-  flex: 1;              /* সমান প্রস্থ */
+  flex: 1 1 160px;
   max-width: 180px;
   transition: transform 0.3s ease;
 }
 
 .stat-box h3 {
-  font-size: 28px;      /* ছোট ফন্ট সাইজ */
+  font-size: 28px;
   color: #00ffcc;
   margin-bottom: 6px;
 }
 
 .stat-box p {
-  font-size: 14px;      /* ছোট ফন্ট */
+  font-size: 14px;
   color: #ddd;
   margin: 0;
 }
+
