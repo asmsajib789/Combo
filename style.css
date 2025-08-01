@@ -167,59 +167,50 @@ footer {
   background-color: #1d8ac4;
   box-shadow: 0 6px 16px rgba(34, 158, 217, 0.5);
 }
-/* Agent Section */
-.agent-section {
-  background-color: #0a183d;
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #0a0f2c;
   color: #fff;
-  padding: 40px 20px;
+}
+
+.stats-section {
+  padding: 50px 20px;
   text-align: center;
-  border-radius: 20px;
-  margin: 40px 0;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
 }
 
-.agent-section h2 {
-  font-size: 26px;
-  margin-bottom: 15px;
-  color: #00ffcc;
+.stats-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
 }
 
-.agent-section p {
-  font-size: 16px;
-  margin-bottom: 25px;
-  color: #ccc;
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.agent-features ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto 25px;
-  max-width: 400px;
+.stat-box {
+  background: #111842;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #1f2b61;
+  min-width: 180px;
+  transition: transform 0.3s ease;
 }
 
-.agent-features ul li {
-  background: rgba(255, 255, 255, 0.05);
-  margin-bottom: 10px;
-  padding: 12px 15px;
-  border-radius: 12px;
-  font-size: 15px;
-  text-align: left;
-  color: #fff;
-}
-
-.btn-agent {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #00c2ff;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn-agent:hover {
-  background-color: #0099cc;
+.stat-box:hover {
   transform: scale(1.05);
 }
-    
+
+.stat-box h3 {
+  font-size: 36px;
+  color: #00ffcc;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  font-size: 16px;
+  color: #ddd;
+}
