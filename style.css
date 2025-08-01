@@ -169,72 +169,63 @@ footer {
 }
 
 
-.body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f2f2f2;
-  color: #111;
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
   padding: 20px;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #333;
+  margin: 0;
 }
 
 .stats-container {
   display: flex;
+  justify-content: space-between;
+  gap: 15px;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
 }
 
 .stat-box {
-  flex: 0 0 30%;
-  background: #ffffff;
-  border-radius: 12px;
+  flex: 1 1 calc(33.33% - 10px);
+  background: #fff;
   padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  min-width: 250px;
   transition: transform 0.3s ease;
 }
 
 .stat-box:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
 }
 
 .stat-box h3 {
-  font-size: 26px;
-  color: #0b5;
-  margin-bottom: 10px;
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 8px;
 }
 
 .stat-box p {
-  font-size: 16px;
   margin-bottom: 12px;
+  font-size: 16px;
 }
 
 .claim-btn {
   display: inline-block;
-  background: #00ffc8;
+  background: #00ffcc;
   color: #000;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 6px;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 .claim-btn:hover {
   background: #00ccaa;
 }
 
-/* Responsive for mobile */
-@media screen and (max-width: 768px) {
+/* Responsive */
+@media (max-width: 768px) {
   .stat-box {
-    flex: 0 0 90%;
+    flex: 1 1 100%;
   }
 }
