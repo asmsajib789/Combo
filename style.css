@@ -169,51 +169,72 @@ footer {
 }
 
 
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2f2f2;
+  color: #111;
+  padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
 
 .stats-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;    /* ছোট স্ক্রিনে নিচে নামবে */
-  max-width: 600px;   /* পুরো কন্টেইনারের সর্বোচ্চ প্রস্থ */
-  margin: 0 auto;     /* সেন্টারে আনবে */
-  flex-direction: row; /* ৩টি বক্স পাশে থাকবে */
+  gap: 20px;
 }
 
 .stat-box {
-  flex: 1 1 30%;      /* প্রতিটা বক্স ৩০% জায়গা পাবে */
-  max-width: 180px;   /* বক্সের সর্বোচ্চ প্রস্থ */
-  background: #111842;
-  padding: 15px 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 8px #1f2b61;
+  flex: 0 0 30%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
   transition: transform 0.3s ease;
 }
 
+.stat-box:hover {
+  transform: scale(1.05);
+}
+
 .stat-box h3 {
-  font-size: 28px;
-  color: #00ffcc;
-  margin-bottom: 6px;
+  font-size: 26px;
+  color: #0b5;
+  margin-bottom: 10px;
 }
 
 .stat-box p {
-  font-size: 14px;
-  color: #ddd;
-  margin: 0;
+  font-size: 16px;
+  margin-bottom: 12px;
 }
 
 .claim-btn {
   display: inline-block;
-  margin-top: 10px;
-  background: #00ffcc;
+  background: #00ffc8;
   color: #000;
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 6px;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
 }
 
 .claim-btn:hover {
   background: #00ccaa;
+}
+
+/* Responsive for mobile */
+@media screen and (max-width: 768px) {
+  .stat-box {
+    flex: 0 0 90%;
+  }
 }
