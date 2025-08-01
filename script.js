@@ -1,7 +1,7 @@
 // Fixed initial numbers (you can set to your base values)
 let baseStats = {
-  usersJoined: 8500,
-  bonusGiven: 3400,
+  usersJoined: 500,
+  bonusGiven: 340,
   todayJoined: 0,
 };
 
