@@ -169,46 +169,72 @@ footer {
 }
 
 
+.body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2f2f2;
+  color: #111;
+  padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
 .stats-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  margin: 20px 0;
+  gap: 20px;
 }
 
 .stat-box {
   flex: 0 0 30%;
-  background: #f9f9f9;
+  background: #ffffff;
   border-radius: 12px;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: scale(1.05);
 }
 
 .stat-box h3 {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 26px;
+  color: #0b5;
+  margin-bottom: 10px;
 }
 
 .stat-box p {
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .claim-btn {
   display: inline-block;
-  margin-top: 10px;
-  background: #00ffcc;
+  background: #00ffc8;
   color: #000;
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 6px;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
 }
 
 .claim-btn:hover {
   background: #00ccaa;
+}
+
+/* Responsive for mobile */
+@media screen and (max-width: 768px) {
+  .stat-box {
+    flex: 0 0 90%;
+  }
 }
