@@ -201,3 +201,19 @@ footer {
   color: #ddd;
   margin: 0;
 }
+
+.claim-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #00ffcc;
+  color: #000;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.claim-btn:hover {
+  background: #00ccaa;
+}
