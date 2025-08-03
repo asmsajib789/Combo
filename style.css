@@ -224,7 +224,7 @@ footer {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  background-color: #fff;
+  background-color: #001f3f;
   border: 2px solid navy;
   box-shadow: 0 0 10px #333;
   z-index: 9999;
