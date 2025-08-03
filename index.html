@@ -151,5 +151,99 @@
 
 </body>
 </html>
+
+<!-- Stylish Popup Ad CSS -->
+<style>
+  #popupAd {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  #popupAdContent {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px 40px;
+    max-width: 380px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+    animation: popupFadeIn 0.4s ease forwards;
+  }
+  @keyframes popupFadeIn {
+    from {opacity: 0; transform: scale(0.8);}
+    to {opacity: 1; transform: scale(1);}
+  }
+  #popupAdClose {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #888;
+    transition: color 0.3s ease;
+  }
+  #popupAdClose:hover {
+    color: #e74c3c;
+  }
+  #popupAdContent h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #222;
+  }
+  #popupAdContent p {
+    font-size: 17px;
+    margin-bottom: 25px;
+    color: #555;
+  }
+  #popupAdContent a.join-btn {
+    background: linear-gradient(90deg, #0052d4, #4364f7, #6fb1fc);
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(111,177,252,0.6);
+    transition: background 0.3s ease;
+    display: inline-block;
+  }
+  #popupAdContent a.join-btn:hover {
+    background: linear-gradient(90deg, #4364f7, #6fb1fc, #0052d4);
+  }
+</style>
+
+<!-- Stylish Popup Ad HTML -->
+<div id="popupAd">
+  <div id="popupAdContent">
+    <span id="popupAdClose">&times;</span>
+    <h2>🎉 বিশেষ অফার!</h2>
+    <p>আজই জয়েন করুন এবং <strong>Oxy11</strong> প্রোমো কোড ব্যবহার করে এক্সট্রা বোনাস পেয়ে যান।</p>
+    <a href="https://refpa58144.com/L?tag=d_905607m_1236c_promo" target="_blank" class="join-btn">এখনই জয়েন করুন</a>
+  </div>
+</div>
+
+<!-- Stylish Popup Ad JS -->
+<script>
+  window.onload = function() {
+    setTimeout(() => {
+      document.getElementById('popupAd').style.display = 'flex';
+    }, 4000);
+
+    document.getElementById('popupAdClose').onclick = function() {
+      document.getElementById('popupAd').style.display = 'none';
+    }
+
+    document.getElementById('popupAd').onclick = function(e) {
+      if (e.target === this) {
+        this.style.display = 'none';
+      }
+    }
+  };
+</script>
 </body>
 </html>
