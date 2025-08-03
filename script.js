@@ -1,16 +1,19 @@
-// Function to get a random daily joined number (2-6) and save for the day
-function getTodayJoinCount() {
-  const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-  const saved = JSON.parse(localStorage.getItem('todayJoinData'));
+function openPopup(type) {
+  const popup = document.getElementById('popup-box');
+  const title = document.getElementById('popup-title');
+  const link = document.getElementById('popup-link');
 
-  if (saved && saved.date === today) {
-    return saved.count;
-  } else {
-    const randomCount = Math.floor(Math.random() * 5) + 2; // 2 to 6
-    localStorage.setItem('todayJoinData', JSON.stringify({ date: today, count: randomCount }));
-    return randomCount;
+  if (type === 'deposit') {
+    title.textContent = 'ডিপোজিট';
+    link.href = 'https://wa.me/8801826444505';
+  } else if (type === 'withdraw') {
+    title.textContent = 'উইথড্র';
+    link.href = 'https://wa.me/8801826444505';
   }
+
+  popup.classList.add('show');
 }
 
-// Set the today's join count
-document.getElementById('todayJoined').innerText = getTodayJoinCount();
+function closePopup() {
+  document.getElementById('popup-box').classList.remove('show');
+}
