@@ -1,19 +1,14 @@
-function openPopup(type) {
-  const popup = document.getElementById('popup-box');
+function showPopup(type) {
+  const popup = document.getElementById('popup');
   const title = document.getElementById('popup-title');
-  const link = document.getElementById('popup-link');
-
   if (type === 'deposit') {
-    title.textContent = 'ডিপোজিট';
-    link.href = 'https://wa.me/8801826444505';
-  } else if (type === 'withdraw') {
-    title.textContent = 'উইথড্র';
-    link.href = 'https://wa.me/8801826444505';
+    title.innerText = '💳 ডিপোজিট সার্ভিস';
+  } else {
+    title.innerText = '🏧 উইথড্র সার্ভিস';
   }
-
-  popup.classList.add('show');
+  popup.style.display = 'block';
 }
 
-function closePopup() {
-  document.getElementById('popup-box').classList.remove('show');
+function hidePopup() {
+  document.getElementById('popup').style.display = 'none';
 }
