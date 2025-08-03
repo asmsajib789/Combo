@@ -35,28 +35,21 @@
 </head>
 <body>
 
-  <!-- Marquee -->
-  <marquee behavior="scroll" direction="left" style="background: navy; color: white; padding: 10px;">
-    আমাদের থেকে 1xBet, Linebet ডিপোজিট ও উইথড্র নিতে পারবেন — যোগাযোগ করুন এখনই!
-  </marquee>
+<!-- Button Section -->
+<div class="button-area">
+  <button class="popup-btn" onclick="openPopup('deposit')">ডিপোজিট</button>
+  <button class="popup-btn" onclick="openPopup('withdraw')">উইথড্র</button>
+</div>
 
-  <!-- Button Section -->
-  <div class="button-area">
-    <button class="popup-btn" onclick="openPopup('deposit')">ডিপোজিট</button>
-    <button class="popup-btn" onclick="openPopup('withdraw')">উইথড্র</button>
+<!-- Popup Section -->
+<div id="popup-box" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <h3 id="popup-title">ডিপোজিট</h3>
+    <p>আমাদের থেকে 1xBet বা Linebet এর ডিপোজিট / উইথড্র নিতে চাইলে যোগাযোগ করুন।</p>
+    <a id="popup-link" href="https://wa.me/8801826444505" target="_blank" class="join-now">Join on IMO</a>
   </div>
-
-  <!-- Popup Section -->
-  <div id="popup-box" class="popup">
-    <div class="popup-content">
-      <span class="close-btn" onclick="closePopup()">&times;</span>
-      <h3 id="popup-title">ডিপোজিট</h3>
-      <p>আমাদের থেকে 1xBet বা Linebet এর ডিপোজিট / উইথড্র নিতে চাইলে যোগাযোগ করুন।</p>
-      <a id="popup-link" href="#" target="_blank" class="join-now">Join on IMO</a>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+</div>
 </body>
 </html>
   <div id="combo-container">
