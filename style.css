@@ -226,3 +226,19 @@ footer {
 .join-btn:hover {
   background-color: #00b377;
 }
+.whatsapp-button {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+.whatsapp-button:hover {
+  background-color: #1DA851;
+}
