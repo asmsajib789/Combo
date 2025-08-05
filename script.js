@@ -12,11 +12,4 @@ function showPopup(type) {
 function hidePopup() {
   document.getElementById('popup').style.display = 'none';
 }
-<!-- JS to show popup on page load -->
-<script>
-  window.onload = function() {
-    setTimeout(function() {
-      document.getElementById('popup').style.display = 'block';
-    }, 1500); // 1.5 সেকেন্ড পর পপআপ দেখাবে
-  }
-</script>
+
