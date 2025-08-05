@@ -213,6 +213,117 @@
     </tr>
   </tbody>
 </table>
+  <!-----payment -->
+  
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Proof Last 10 Transactions</title>
+  <style>
+    body { font-family: sans-serif; background: #f9f9f9; padding: 20px; }
+    h2 { text-align: center; color: #333; }
+    form { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); max-width: 450px; margin: auto; }
+    input, select, button { padding: 8px; margin: 5px 0; width: 100%; box-sizing: border-box; font-size: 16px; }
+    button { cursor: pointer; background: #28a745; color: white; border: none; border-radius: 5px; }
+    table { width: 100%; margin-top: 20px; border-collapse: collapse; max-width: 700px; margin-left: auto; margin-right: auto; font-size: 16px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      form { padding: 10px; max-width: 100%; }
+      input, select, button {
+        font-size: 18px;
+        padding: 12px;
+      }
+      table {
+        font-size: 14px;
+      }
+      th, td {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🧾 Payment Proof Upload (Last 10 Transactions)</h2>
+
+  <form id="paymentForm">
+    <input type="text" id="name" placeholder="আপনার নাম" required />
+    <input type="date" id="date" required />
+    <input type="number" id="amount" placeholder="টাকা" required />
+
+    <label for="paymentMethod">পেমেন্ট মাধ্যম:</label>
+    <select id="paymentMethod" required>
+      <option value="">-- নির্বাচন করুন --</option>
+      <option value="বিকাশ">বিকাশ</option>
+      <option value="নগদ">নগদ</option>
+      <option value="রকেট">রকেট</option>
+    </select>
+
+    <label for="siteSelect">সাইট নির্বাচন করুন:</label>
+    <select id="siteSelect" required>
+      <option value="">-- নির্বাচন করুন --</option>
+      <option value="1xbet">1xbet</option>
+      <option value="linebet">linebet</option>
+      <option value="melbet">melbet</option>
+    </select>
+
+    <button type="submit">সাবমিট করুন</button>
+  </form>
+
+  <table id="proofTable">
+    <thead>
+      <tr>
+        <th>নাম</th>
+        <th>তারিখ</th>
+        <th>টাকা</th>
+        <th>পেমেন্ট মাধ্যম</th>
+        <th>সাইট</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script>
+    const form = document.getElementById("paymentForm");
+    const tableBody = document.querySelector("#proofTable tbody");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const date = document.getElementById("date").value;
+      const amount = document.getElementById("amount").value;
+      const paymentMethod = document.getElementById("paymentMethod").value;
+      const site = document.getElementById("siteSelect").value;
+
+      const newRow = document.createElement("tr");
+      newRow.innerHTML = `
+        <td>${name}</td>
+        <td>${date}</td>
+        <td>${amount}৳</td>
+        <td>${paymentMethod}</td>
+        <td>${site}</td>
+      `;
+
+      tableBody.appendChild(newRow);
+
+      // যদি 10 টার বেশি হয়, তাহলে পুরানো গুলো সরিয়ে দাও
+      while (tableBody.rows.length > 10) {
+        tableBody.deleteRow(0);
+      }
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
+  <!----ses-->
 
   <section id="promo-section">
     <h2>🎁 Get Your Bonus Now!</h2>
