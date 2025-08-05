@@ -35,109 +35,125 @@
   <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Register Popup</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Example</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
+      margin: 0;
     }
 
+    /* Overlay */
     .popup-overlay {
       position: fixed;
       top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      display: none;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 9999;
+      z-index: 1000;
     }
 
-    .popup-content {
-      background-color: #fff;
-      padding: 25px 20px;
+    /* Popup Box */
+    .popup {
+      background: white;
+      padding: 25px;
       border-radius: 10px;
-      max-width: 320px;
       width: 90%;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      text-align: center;
+      max-width: 350px;
       position: relative;
-      animation: zoomIn 0.4s ease;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      animation: slideDown 0.5s ease;
     }
 
-    @keyframes zoomIn {
-      from { transform: scale(0.5); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+    @keyframes slideDown {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
-    .popup-content h2 {
+    /* Close button (X) */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      font-weight: bold;
       color: black;
-      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .popup h2 {
+      color: black;
       font-size: 22px;
+      margin-bottom: 15px;
     }
 
-    .popup-content p {
-      color: black;
+    .popup p {
+      color: #222;
       font-size: 16px;
       margin-bottom: 20px;
     }
 
-    .popup-close {
-      position: absolute;
-      top: 8px; right: 12px;
-      font-size: 24px;
-      font-weight: bold;
-      color: black;
-      cursor: pointer;
-      user-select: none;
+    .popup-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .register-btn {
-      background-color: #0a57c3;
+    .popup-buttons a {
+      padding: 10px 15px;
+      background-color: black;
       color: white;
-      gap: 8px;
-      padding: 12px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
       text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    .register-btn:hover {
-      background-color: #003f99;
+    .popup-buttons a:hover {
+      background-color: #333;
+    }
+
+    @media (max-width: 400px) {
+      .popup-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- Popup -->
+<!-- Popup HTML -->
 <div class="popup-overlay" id="popup">
-  <div class="popup-content">
-    <span class="popup-close" onclick="closePopup()">×</span>
-    <h2>🎉 বিশেষ অফার!</h2>
-    <p>এখনই জয়েন করুন 1xBet, Linebet বা Melbet-এ<br>অফিশিয়াল প্রোমো কোড: <b>Oxy11</b></p>
-    <p class="payment-info"><b>Cash/Aviator এ ক্লিক করে ডেমো দেখুন</b></p>
-    <a href="https://lb-aff.com/L?tag=d_1050501m_22611c_Oxy11&site=1050501&ad=22611&r=games/crash" target="_blank" class="register-btn">🚀Crash Game</a>
-    <a href="https://lb-aff.com/L?tag=d_1050501m_22611c_promo&site=1050501&ad=22611&r=slots/game/52358/aviator" target="_blank" class="register-btn">🚀Aviator Game</a>
-  </div>
+  <div class="popup">
+    <span class="close-btn" onclick="closePopup()">×</span>
+    <h2>📢 জনপ্রিয় গেম </h2>
+    <p>1xBet / Linebet নিচে দেওয়া বাটনে ক্লিক করে দেখুন ফ্রী তে গেম উপভোগ করুন</p>
+    <div class="popup-buttons">
+      <a href="https://lb-aff.com/L?tag=d_1050501m_22611c_Oxy11&site=1050501&ad=22611&r=games/crash" target="_blank">🚀 Crash Game</a>
+      <a href="https://lb-aff.com/L?tag=d_1050501m_22611c_Oxy11&site=1050501&ad=22611&r=slots/game/105804/super-ace-deluxe" target="_blank">Supar Ace</a>
+    </div>
   </div>
 </div>
 
+<!-- JS to close popup -->
 <script>
   function closePopup() {
-    document.getElementById("popup").style.display = "none";
+    document.getElementById('popup').style.display = 'none';
   }
 
-  window.addEventListener("load", function () {
-    setTimeout(function () {
-      document.getElementById("popup").style.display = "flex";
-    }, 500); // 0.5 সেকেন্ড পরে দেখাবে
-  });
+  // Auto show popup after 2s
+  window.onload = function() {
+    setTimeout(() => {
+      document.getElementById('popup').style.display = 'flex';
+    }, 2000);
+  }
 </script>
 
 </body>
