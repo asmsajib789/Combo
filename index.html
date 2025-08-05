@@ -32,20 +32,6 @@
     </marquee>
   </div>
 
-  <div class="button-container">
-    <button onclick="showPopup('deposit')" class="btn-style">🪙Deposit</button>
-    <button onclick="showPopup('withdraw')" class="btn-style">💶Withdraw</button>
-  </div>
-
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="hidePopup()">&times;</span>
-      <h3 id="popup-title">সার্ভিস</h3>
-      <p>আমাদের থেকে 24 ঘণ্টা 1xBet/Linebet ডিপোজিট এবং উইথড্র নিতে পারবেন </p>
-      <a href="https://wa.me/8801826444505" target="_blank" class="btn-style">Chat On WhatsApp</a>
-    </div>
-  </div>
-
   <!-------popup------->
   <!-- Popup HTML -->
 <div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999;">
@@ -63,6 +49,14 @@
     <button onclick="document.getElementById('popup').style.display='none'" style="position:absolute; top:5px; right:10px; background:none; border:none; font-size:18px; cursor:pointer;">✖️</button>
   </div>
 </div>
+  <!-- JS to show popup on page load -->
+<script>
+  window.onload = function() {
+    setTimeout(function() {
+      document.getElementById('popup').style.display = 'block';
+    }, 1500); // 1.5 সেকেন্ড পর পপআপ দেখাবে
+  }
+</script>
   <!------ses------->
 
   <div id="combo-container">
