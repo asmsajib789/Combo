@@ -123,6 +123,92 @@
     <iframe width="320" height="180" src="https://www.youtube.com/embed/ভিডিও_আইডি" frameborder="0" allowfullscreen></iframe>
   </div>
 </section>
+  <style>
+  .payment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-size: 16px;
+  }
+
+  .payment-table th,
+  .payment-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .payment-table th {
+    background-color: #003366;
+    color: white;
+  }
+
+  /* Mobile responsive styles */
+  @media (max-width: 600px) {
+    .payment-table thead {
+      display: none;
+    }
+
+    .payment-table tr {
+      display: block;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .payment-table td {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 15px;
+      text-align: left;
+      border: none;
+      border-bottom: 1px solid #eee;
+    }
+
+    .payment-table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #003366;
+    }
+
+    .payment-table td:last-child {
+      border-bottom: none;
+    }
+  }
+</style>
+
+<table class="payment-table">
+  <thead>
+    <tr>
+      <th>Gateway</th>
+      <th>Site Name</th>
+      <th>Deposit</th>
+      <th>Withdraw</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Gateway">Bkash</td>
+      <td data-label="Site Name">1xBet</td>
+      <td data-label="Deposit">৳50 to Unlimited</td>
+      <td data-label="Withdraw">৳150 to Unlimited</td>
+    </tr>
+    <tr>
+      <td data-label="Gateway">Nagad</td>
+      <td data-label="Site Name">Linebet</td>
+      <td data-label="Deposit">৳50 to Unlimited</td>
+      <td data-label="Withdraw">৳150 to Unlimited</td>
+    </tr>
+    <tr>
+      <td data-label="Gateway">Rocket</td>
+      <td data-label="Site Name">Melbet</td>
+      <td data-label="Deposit">৳50 to Unlimited</td>
+      <td data-label="Withdraw">৳150 to Unlimited</td>
+    </tr>
+  </tbody>
+</table>
 
   <section id="promo-section">
     <h2>🎁 Get Your Bonus Now!</h2>
