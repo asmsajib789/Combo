@@ -20,6 +20,134 @@
     </head>
 </head>
 <body>
+  <!----hot--->
+  <section id="news" style="background: linear-gradient(45deg, #0f0f33, #1c1c44); color: white; padding: 25px; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.7); margin: 20px auto; max-width: 700px;">
+
+  <h2 style="text-align: center; font-size: 30px; color: #00f0ff; text-shadow: 1px 1px 6px #000;">
+    <span style="animation: blink 1s infinite;">🔔</span> আজকের স্পেশাল অফার
+  </h2>
+
+  <div id="news-content" style="
+    margin-top: 20px;
+    font-size: 22px;
+    text-align: center;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    border-left: 6px solid #00f0ff;
+    animation: pulse 2s infinite;
+    font-weight: 600;
+  "></div>
+
+  <div id="countdown" style="margin-top: 18px; text-align: center; font-size: 20px; color: #ffdd57; font-weight: bold;"></div>
+
+  <div id="join-button" style="text-align: center; margin-top: 25px;"></div>
+
+  <div style="
+    background: linear-gradient(90deg, #ff003c, #ff7a00);
+    color: white;
+    padding: 18px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ff4f3f;
+    margin: 30px auto 0;
+    max-width: 600px;
+    animation: flicker 1.5s infinite alternate;
+  ">
+    🔥 হট অফার: ১xBet-এ আজই জয়েন করুন এবং পান ১৫০% বোনাস + ফ্রি স্পিন! 🎰  
+    কুপন কোড: <span style="text-decoration: underline; cursor: pointer;">Oxy11</span>
+  </div>
+
+</section>
+
+<style>
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.02);}
+  100% {transform: scale(1);}
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+.join-btn {
+  background-color: #00f0ff;
+  color: #000;
+  padding: 14px 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  display: inline-block;
+  margin-top: 10px;
+}
+.join-btn:hover {
+  background-color: #00c6d7;
+}
+</style>
+
+<script>
+  const now = new Date();
+  const hour = now.getHours();
+  const newsEl = document.getElementById("news-content");
+  const countdownEl = document.getElementById("countdown");
+  const joinEl = document.getElementById("join-button");
+
+  let newsText = "";
+  let buttonLink = "";
+  let endTime = new Date();
+
+  if (hour >= 5 && hour < 12) {
+    newsText = "🌞 সকাল বোনাস: রেজিস্ট্রেশনে ৫০টি ফ্রি স্পিন 🎰!";
+    buttonLink = "https://refpa3267686.top/L?tag=d_905607m_1622c_2023&site=905607&ad=1622";
+    endTime.setHours(12, 0, 0);
+  } else if (hour >= 12 && hour < 17) {
+    newsText = "💸 দুপুরের অফার: ১১১% বোনাস + ১০৳ ক্যাশব্যাক 🤑!";
+    buttonLink = "https://refpa3267686.top/L?tag=d_905607m_1622c_2023&site=905607&ad=1622";
+    endTime.setHours(17, 0, 0);
+  } else if (hour >= 17 && hour < 22) {
+    newsText = "🌇 সন্ধ্যা প্রমো: Lucky Draw Entry একদম ফ্রি 🎁!";
+    buttonLink = "https://refpa3267686.top/L?tag=d_905607m_1622c_2023&site=905607&ad=1622";
+    endTime.setHours(22, 0, 0);
+  } else {
+    newsText = "🌙 রাতের অফার: ক্যাসিনোতে ২০% ক্যাশব্যাক 🔥!";
+    buttonLink = "https://refpa3267686.top/L?tag=d_905607m_1622c_2023&site=905607&ad=1622";
+    endTime.setHours(29, 0, 0);
+  }
+
+  newsEl.innerHTML = newsText;
+  joinEl.innerHTML = `<a href="${buttonLink}" class="join-btn" target="_blank" rel="noopener noreferrer">🎯 এখনই রেজিস্ট্রেশন করুন</a>`;
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = endTime - now;
+
+    if (diff <= 0) {
+      countdownEl.innerText = "⏰ অফারটি শেষ হয়ে গেছে!";
+      return;
+    }
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    countdownEl.innerText = `⏳ অফার শেষ হতে বাকি: ${hours} ঘন্টা ${mins} মিনিট ${secs} সেকেন্ড`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
 
   <header>
     <h1>1xbet-Linebet </h1>
