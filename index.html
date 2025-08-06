@@ -243,6 +243,74 @@
   </div>
 </section>
 
+  <table class="payment-table" style="width:100%; max-width: 900px; margin: 40px auto; border-collapse: collapse; font-family: Arial, sans-serif;">
+  <thead>
+    <tr style="background-color: #FFA500; color: white;">
+      <th style="padding: 12px; border: 1px solid #ddd;">Rank</th>
+      <th style="padding: 12px; border: 1px solid #ddd;">Gateway</th>
+      <th style="padding: 12px; border: 1px solid #ddd;">Site Name</th>
+      <th style="padding: 12px; border: 1px solid #ddd;">Deposit</th>
+      <th style="padding: 12px; border: 1px solid #ddd;">Withdraw</th>
+      <th style="padding: 12px; border: 1px solid #ddd;">Pay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: white; color: black;">
+      <td data-label="Rank" style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">1</td>
+      <td data-label="Gateway" style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Bkash, Nagad, Rocket</td>
+      <td data-label="Site Name" style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">1xbet, Linebet</td>
+      <td data-label="Deposit" style="padding: 12px; border: 1px solid #ddd;">৳50 to Unlimited</td>
+      <td data-label="Withdraw" style="padding: 12px; border: 1px solid #ddd;">৳150 to Unlimited</td>
+      <td data-label="Pay" style="padding: 12px; border: 1px solid #ddd;">
+        <a href="https://wa.me/8801826444505" target="_blank" style="display:inline-block; padding: 8px 16px; background-color: #25D366; color: white; border-radius: 5px; text-decoration: none; font-weight: bold;">Pay Now</a>
+      </td>
+    </tr>
+    <!-- প্রয়োজন অনুসারে আরও সারি যোগ করতে পারো -->
+  </tbody>
+</table>
+
+<style>
+  /* Responsive Table */
+  @media (max-width: 600px) {
+    .payment-table thead {
+      display: none;
+    }
+    .payment-table, .payment-table tbody, .payment-table tr, .payment-table td {
+      display: block;
+      width: 100%;
+    }
+    .payment-table tr {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      background: white;
+      color: black;
+    }
+    .payment-table td {
+      padding-left: 50%;
+      position: relative;
+      text-align: left;
+      border: none;
+      border-bottom: 1px solid #eee;
+    }
+    .payment-table td:last-child {
+      border-bottom: 0;
+    }
+    .payment-table td::before {
+      position: absolute;
+      top: 12px;
+      left: 15px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: bold;
+      content: attr(data-label);
+      color: #FFA500;
+    }
+  }
+</style>
+
   <section id="promo-section">
     <h2>🎁 Get Your Bonus Now!</h2>
     <p><strong>Promo Code:</strong> Oxy11</p>
