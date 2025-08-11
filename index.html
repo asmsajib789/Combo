@@ -280,13 +280,111 @@
         <a href="https://bw-prm.com/chicke-road-3-lite/?p=%2Fregistration%2F&s1=Oxy11&id=1KPH" target="_blank">🎲Slots</a>
       </div>
     </section>
+</div>
 
+  
+<!-- Statistics Section (Paste into your page) -->
+<section id="stats-section" style="background: linear-gradient(135deg,#071a3a 0%, #0b2b5a 100%); color: #fff; padding: 48px 16px; font-family: 'Segoe UI', Roboto, Arial, sans-serif;">
+  <div style="max-width:1100px; margin:0 auto; display:flex; gap:20px; flex-wrap:wrap; align-items:stretch;">
+    <!-- Card -->
+    <div style="flex:1 1 260px; background: rgba(255,255,255,0.04); padding:22px; border-radius:12px; box-shadow: 0 6px 18px rgba(2,6,23,0.6);">
+      <div style="font-size:14px; opacity:0.9;">মোট ব্যবহারকারী</div>
+      <div class="count" data-target="2000000" style="font-size:28px; font-weight:700; margin-top:8px;">0</div>
+      <div style="margin-top:6px; font-size:13px; opacity:0.85;">সক্রিয়/রেজিস্টার করা ইউজার</div>
+    </div>
+
+    <div style="flex:1 1 220px; background: rgba(255,255,255,0.04); padding:22px; border-radius:12px; box-shadow: 0 6px 18px rgba(2,6,23,0.6);">
+      <div style="font-size:14px; opacity:0.9;">পেমেন্ট মেথড</div>
+      <div class="count" data-target="250" style="font-size:28px; font-weight:700; margin-top:8px;">0</div>
+      <div style="margin-top:6px; font-size:13px; opacity:0.85;">অল্টারনেটিভ পেমেন্ট ওয়ারেন্ট</div>
+    </div>
+
+    <div style="flex:1 1 260px; background: rgba(255,255,255,0.04); padding:22px; border-radius:12px; box-shadow: 0 6px 18px rgba(2,6,23,0.6);">
+      <div style="font-size:14px; opacity:0.9;">গড় আয় প্রতি ব্যবহারকারী</div>
+      <div class="count-money" data-target="3000" style="font-size:28px; font-weight:700; margin-top:8px;">$0</div>
+      <div style="margin-top:6px; font-size:13px; opacity:0.85;">মাসিক গড় আয় (USD)</div>
+    </div>
+
+    <!-- Total Revenue Card (larger) -->
+    <div style="flex:1 1 100%; margin-top:6px; background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); padding:20px; border-radius:12px; display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <div style="font-size:14px; opacity:0.9;">মোট আয় (আনুমানিক)</div>
+        <div id="total-revenue" style="font-size:30px; font-weight:800; margin-top:6px;">$0</div>
+        <div style="margin-top:6px; font-size:13px; opacity:0.85;">(Total Users × Average Income)</div>
+      </div>
+      <div style="text-align:right; min-width:160px;">
+        <div style="font-size:13px; opacity:0.9;">ডেটা আপডেট</div>
+        <div id="last-updated" style="font-size:13px; opacity:0.85; margin-top:6px;">Updated: <!-- filled by JS --></div>
+      </div>
+    </div>
   </div>
-  <section id="how-to-register">
-  <h2 style="text-align:center;">কিভাবে একাউন্ট খুলবেন</h2>
-  <div style="text-align:center;">
-    <iframe width="320" height="180" src="https://youtu.be/E4n-1jAj9NQ?si=5kbUU5l7UGOvtDxu" frameborder="0" allowfullscreen></iframe>
-  </div>
+
+  <script>
+    // --- Configuration: change values here if needed ---
+    const config = {
+      totalUsers: 2000000,     // মোট ইউজার (integer)
+      paymentMethods: 250,     // পেমেন্ট মেথড (integer)
+      avgIncome: 3000,         // গড় আয় প্রতি ব্যবহারকারী (USD)
+      currencySymbol: '$'      // currency sign to show
+    };
+
+    // Simple number formatter with commas
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    // Animate counters
+    document.addEventListener('DOMContentLoaded', () => {
+      // counters
+      document.querySelectorAll('.count').forEach(el => {
+        const target = parseInt(el.getAttribute('data-target')) || 0;
+        const duration = 1400;
+        const stepTime = Math.max(10, Math.floor(duration / target));
+        let current = 0;
+        const increment = Math.ceil(target / (duration / 16));
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            el.textContent = numberWithCommas(target);
+            clearInterval(timer);
+          } else {
+            el.textContent = numberWithCommas(current);
+          }
+        }, 16);
+      });
+
+      // money counter (avg income)
+      const moneyEl = document.querySelector('.count-money');
+      const moneyTarget = parseInt(moneyEl.getAttribute('data-target')) || 0;
+      let mcur = 0;
+      const mduration = 1200;
+      const minc = Math.ceil(moneyTarget / (mduration / 16));
+      const mtimer = setInterval(() => {
+        mcur += minc;
+        if (mcur >= moneyTarget) {
+          moneyEl.textContent = config.currencySymbol + numberWithCommas(moneyTarget);
+          clearInterval(mtimer);
+        } else {
+          moneyEl.textContent = config.currencySymbol + numberWithCommas(mcur);
+        }
+      }, 16);
+
+      // calculate total revenue and show (no animation heavy)
+      const totalRevenue = BigInt(config.totalUsers) * BigInt(config.avgIncome); // use BigInt for safety
+      const totalStr = numberWithCommas(totalRevenue.toString());
+      document.getElementById('total-revenue').textContent = config.currencySymbol + totalStr;
+
+      // last updated timestamp
+      const d = new Date();
+      const formatted = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+      document.getElementById('last-updated').textContent = 'Updated: ' + formatted;
+
+      // fill the raw values (in case JS animation not supported)
+      document.querySelectorAll('.count[data-target]').forEach(el => {
+        el.setAttribute('title','Raw: ' + el.getAttribute('data-target'));
+      });
+    });
+  </script>
 </section>
 
 
